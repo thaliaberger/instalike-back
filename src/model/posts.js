@@ -7,3 +7,9 @@ export async function getAllPosts() {
     const collection = db.collection("posts");
     return collection.find().toArray();
 };
+
+export async function createNewPost(post) {
+    const db = conection.db("instalike");
+    const collection = db.collection("posts");
+    return collection.insertOne(post);
+};
